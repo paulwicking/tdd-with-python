@@ -8,6 +8,9 @@ import unittest
 
 
 class NewVisitorTest(unittest.TestCase):
+    """Tests the user experience from a new visitor's point of view.
+
+    """
     def setUp(self):
         self.browser = webdriver.Firefox()
 
@@ -15,6 +18,9 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.quit()
 
     def test_can_start_a_list_and_retrieve_it_later(self):
+        """Creates multiple entries in a list and checks the retrieval url.
+
+        """
         #    Edith has heard about this rockin' new to-to app online.
         # She goes to check out the homepage:
         self.browser.get('http://localhost:8000')

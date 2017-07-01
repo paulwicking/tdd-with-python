@@ -10,7 +10,7 @@ from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.common.keys import Keys
 
-MAX_WAIT = 10
+MAX_WAIT = 5
 
 
 class NewVisitorTest(LiveServerTestCase):
@@ -122,4 +122,3 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertIn('Buy milk', page_text)
 
         # Satisfied, they both go back to sleep
-        self.fail('Finish the test!')

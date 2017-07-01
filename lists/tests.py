@@ -9,12 +9,17 @@ class HomePageTest(TestCase):
 
     """
 
-    def test_home_page_returns_correct_html(self):
-        """Checks that the home page wraps contents in <html></html> tags, and that the title is correct.
+    def test_uses_home_page_template(self):
+        """Checks that the home page template is used for /.
 
         :return:
 
         """
 
         response = self.client.get('/')
+        self.assertTemplateUsed(response, 'home.html')
+
+    def test_can_save_a_POST_request(self):
+        response = self.client.post('/', data={'item_text': 'A new list item'})
+        self.assertIn('A new list item', response.content.decode())
         self.assertTemplateUsed(response, 'home.html')

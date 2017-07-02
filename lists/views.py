@@ -12,7 +12,7 @@ def home_page(request):
 def view_list(request, list_id):
     """Checks that we can view a list.
 
-    :param request: HTTP request.
+    :param request: HTTP request object as passed by urls.py.
     :param list_id: The list we want to view.
 
     """
@@ -23,7 +23,7 @@ def view_list(request, list_id):
 def new_list(request):
     """Checks that we can create a new list.
 
-    :param request: HTTP request
+    :param request: HTTP request object.
     :return: http redirects or assertion failure.
     """
     list_ = List.objects.create()

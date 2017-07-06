@@ -7,7 +7,9 @@ from fabric.api import env, local, run
 import random
 
 REPO_URL = 'git@github.com:wowsuchnamaste/tdd-with-python.git'
-
+env.user = "ubuntu"
+env.key_filename = ["~/.ssh/aws-frankfurt-1.pem"]
+env.hosts = ["ec2-35-158-163-216.eu-central-1.compute.amazonaws.com"]
 
 def deploy():
     """Function to deploy site.
